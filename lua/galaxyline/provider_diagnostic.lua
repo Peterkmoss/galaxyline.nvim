@@ -18,15 +18,7 @@ local function get_nvim_lsp_diagnostic(severity)
   local active_clients = lsp.get_active_clients()
 
   if active_clients then
-    local count = 0
-
-    for _, _ in ipairs(active_clients) do
-      local diagnostics = diagnostic.get(api.nvim_get_current_buf(), { severity = severity })
-      for _, _ in pairs(diagnostics) do
-        count = count + 1
-      end
-    end
-
+    local count = #diagnostic.get(api.nvim_get_current_buf(), { severity = severity })
     if count ~= 0 then return count .. ' ' end
   end
 end
