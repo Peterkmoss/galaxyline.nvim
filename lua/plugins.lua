@@ -86,7 +86,7 @@ return {
 
   -- Statusline
   {
-    "glepnir/galaxyline.nvim",
+    "Peterkmoss/galaxyline.nvim",
     config = function()
       require "core.galaxyline"
     end,
